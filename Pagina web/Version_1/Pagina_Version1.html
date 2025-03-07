@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="style_version1.css">
+    <title>Ubicación de Cestos de Basura</title>
+
+</head>
+
+<header>Ubicación de Cestos de Basura</header>
+
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Mapa</a>
+        <a href="#">Reportar Problema</a>
+    </nav>
+
+    <div class="container">
+        <div class="sidebar">
+        
+		<h3>Filtrar Cestos</h3>
+		<label><input type="checkbox" checked> Orgánico</label>
+		<br>
+
+		<label><input type="checkbox" checked> Inorgánico</label>
+		<br>
+		
+		<h3>Estado de los Cestos</h3>
+		<button onclick="openModal('modalLleno')">Cesto Lleno</button>
+		<button onclick="openModal('modalDanado')">Cesto Dañado</button>
+		<br>
+
+		<h3>Información</h3>
+			<p>Encuentra los cestos de basura más cercanos en la universidad y contribuye con el reciclaje.</p>
+	</div>
+
+		<div class="map-container">
+		<h2>Aqui va el mapa</h2>
+		</div>
+	</div>
+
+
+	<div class="bin-images">
+		<div class="bin-item">
+		<img src="organica.jpg" alt="Cesto Orgánico">
+			<p>Orgánico</p>
+	</div>
+
+	<div class="bin-item">
+		<img src="inorganica.png" alt="Cesto Inorgánico">
+		<p>Inorgánico</p>
+	</div>
+	</div>
+
+
+	<div id="modalLleno" class="modal">
+
+        <div class="modal-content">
+            <h2>Reportar Cesto Lleno</h2>
+        </div>
+
+    </div>
+
+    <div id="modalDanado" class="modal">
+        <div class="modal-content">
+            <h2>Reportar Cesto Dañado</h2>
+        </div>
+        
+    </div>
+
+	<script src="version1nt.js"></script>
+
+</html>
