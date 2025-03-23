@@ -1,11 +1,11 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Coordenadas del Instituto Tecnológico Nacional de México Campus Minatitlán
+    // Coordenadas del Campus 
     var campusCoords = [18.005345, -94.555404];
 
-    // Crear el mapa en el div con id "map" y centrarlo en el campus
-    var map = L.map('map').setView(campusCoords, 18); // Nivel de zoom 16
+    // Crear el mapa y centrarlo en el campus
+    var map = L.map('map').setView(campusCoords, 18); 
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
