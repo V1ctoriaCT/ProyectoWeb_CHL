@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubica los Cestos de Basura</title>
+
+    <!--enlaces-->
+    <link rel="stylesheet" type="text/css" href="style7_version2.css">
+    
+
+    <!-- Agregar estilos de Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Agregar la librería JavaScript de Leaflet -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+</head>
+
+<body>
+
+    <img src="logo.png" alt="Logo" class="logo">
+
+    <header>Ubica los Cestos de Basura </header>
+    <!--Barra horizontal 1-->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a class="nav-link active" href="https://minatitlan.tecnm.mx/">Inicio</a>
+            <a class="nav-link" href="#" id="fullscreen-button">Mapa</a>
+            <a class="nav-link" href="login.php">Personal</a>
+        </div>
+    </nav>
+
+
+<section class= "container1" id="informacion-general">
+
+ <aside class="sidebar2">
+        <center><h3 class="sidebar2-header">📌 ¿Qué es esta página?</h3></center>
+        <div class="sidebar2-content">
+            <center><p>Esta plataforma fue creada para apoyar a <strong>
+            visitantes y miembros de la comunidad tecnológica</strong> 
+            durante eventos o actividades dentro del <strong>
+            Instituto Tecnológico Nacional de México, campus Minatitlán</strong>. 
+            Su objetivo es ayudarte a <strong>
+            localizar fácilmente los cestos de basura orgánica e inorgánica</strong> 
+            disponibles dentro del plantel.</p></center>
+        </div>
+        </aside>
+
+        <aside class="sidebar2">
+        <center><h3 class="sidebar2-header">♻️ ¿Por qué es importante separar los residuos?</h3></center>
+        <div class="sidebar2-content">
+            <div class="columna-lista">
+                <ul>
+                    <li>Mejora la limpieza del campus y previene la acumulación de basura.</li>
+                    <li>Facilita el proceso de <strong>reciclaje y disposición adecuada</strong> de los desechos.</li>
+                    <li>Fomenta la <strong>cultura ambiental y la responsabilidad social</strong> entre estudiantes, docentes y visitantes.</li>
+                </ul>
+                </div>
+            </div>
+        </aside>
+</section>
+
+
+<section class="container desktop">
+    <div class="sidebar-group"><!--Barra lateral 2-->
+        <aside class="sidebar">
+            <h3>Cestos más cercanos</h3>
+                <section class="contenedor-boton-inferior">
+                    <button id="mostrar-cercanos" class="btn-cercanos">Buscar</button>
+                </section>
+            <br><h3>Filtrar Cestos</h3>
+                <section class="bin-images">
+                    <div id="filtro-organico-btn" class="bin-button">
+                        <img src="organica.jpg" alt="Cesto Orgánico">
+                        <p>Orgánico</p>
+                    </div>
+                    <div id="filtro-inorganico-btn" class="bin-button">
+                        <img src="inorganica.png" alt="Cesto Inorgánico">
+                        <p>Inorgánico</p>
+                    </div>
+                </section>
+        </aside>
+        <aside class="sidebar3">
+            <center><h3>Situación del Cesto</h3></center>
+                <section class="estado-buttons">
+                    <button data-modal="modalLleno">Lleno</button>
+                    <button data-modal="modalDanado">Dañado</button>
+                </section>
+        </aside>
+    </div>
+        <section class="map-container">
+            <div id="map"></div>
+        </section>
+</section>
+
+
+
+
+    <section class="container2">
+
+        <aside class="sidebar2">
+        <center><h3 class="sidebar2-header">🟢 Cestos Verdes – Orgánica</h3></center>
+        <div class="sidebar2-content">
+        <p>Utiliza estos cestos para depositar residuos biodegradables o de origen natural.</p>
+            <div class="listas-container">
+                
+                <div class="columna-lista">
+                    <h4>✅ Ejemplos:</h4>
+                    <ul>
+                        <li>Restos de comida</li>
+                        <li>Cáscaras de frutas o verduras</li>
+                        <li>Servilletas y papel sucio</li>
+                        <li>Hojas secas</li>
+                    </ul>
+                </div>
+
+                <div class="columna-lista">
+                    <h4>⛔ No deposites:</h4>
+                    <ul>
+                    <li>Plásticos o botellas</li>
+                    <li>Latas</li>
+                    <li>Papel limpio</li>
+                </ul>
+                </div>
+            </div>
+        </div>
+        </aside>
+
+        <aside class="sidebar2">
+        <center><h3 class="sidebar2-header">⚫ Cestos Negros – Inorgánica</h3></center>
+        <div class="sidebar2-content">
+        <p>Usa estos cestos para desechos que no se descomponen fácilmente y pueden ser reciclables..</p>
+            <div class="listas-container">
+                
+                <div class="columna-lista">
+                    <h4>✅ Ejemplos:</h4>
+                    <ul>
+                        <li>Botellas de plástico</li>
+                        <li>Latas de aluminio</li>
+                        <li>Envases y empaques</li>
+                        <li>Papel y cartón limpios</li>
+                    </ul>
+                </div>
+
+                <div class="columna-lista">
+                    <h4>⛔ No deposites:</h4>
+                    <ul>
+                    <li>Restos de comida</li>
+                    <li>Papeles sucios</li>
+                    <li>Desechos sanitarios</li>
+                </ul>
+                </div>
+            </div>
+        </div>
+        </aside>
+    </section>
+
+    <section class="contenedor-reportes">
+        <h3>Reportes Realizados</h3>
+        <div id="lista-reportes" class="reportes-lista"></div>
+    </section>
+
+    <!-- Visor de imagen ampliada -->
+    <div id="visor-imagen" class="overlay-imagen" onclick="cerrarImagen()">
+    <img id="imagen-ampliada" src="" alt="Imagen ampliada" onclick="event.stopPropagation()">
+    </div>
+
+
+
+
+<div id="modalMensaje" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="toggleModal('modalMensaje', false)">&times;</span>
+        <p id="mensajeTexto"></p>
+    </div>
+</div>
+
+<!-- Modal para Cesto Lleno -->
+<div id="modalLleno" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="toggleModal('modalLleno', false)">&times;</span>
+        <h2>Reportar Cesto Lleno</h2>
+        <form id="formularioLleno" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="tipo_reporte" value="lleno">
+
+                <label for="tipoLleno">Cesto:</label>
+                <select id="tipoLleno" name="tipo" required>
+                    <option value="">-Selecciona-</option>
+                </select><br><br>
+
+                <label for="serieLleno">Serie:</label>
+                <select id="serieLleno" name="serie" required>
+                    <option value=""> --El cesto primero--</option>
+                </select><br><br>
+
+                <label>Descripción:</label><br>
+                <textarea name="descripcion" required></textarea><br><br>
+
+                <label>Subir imagen:</label><br>
+                <input type="file" name="imagen" accept="image/*"><br><br>
+
+                <button type="submit">Enviar Reporte</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal para Cesto Dañado -->
+<div id="modalDanado" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="toggleModal('modalDanado', false)">&times;</span>
+        <h2>Reportar Cesto Dañado</h2>
+        <form id="formularioDanado" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="tipo_reporte" value="danado">
+
+                <label for="tipoDanado">Cesto:</label>
+                <select id="tipoDanado" name="tipo" required>
+                    <option value="">--Selecciona--</option>
+                </select><br><br>
+
+                <label for="serieDanado">Serie:</label>
+                <select id="serieDanado" name="serie" required>
+                    <option value=""> --El cesto primero--</option>
+                </select><br><br>
+
+                <label>Descripción:</label><br>
+                <textarea name="descripcion" required></textarea><br><br>
+
+                <label>Subir imagen:</label><br>
+                <input type="file" name="imagen" accept="image/*"><br><br>
+
+                <button type="submit">Enviar Reporte</button>
+        </form>
+    </div>
+</div>
+
+<div id="mensajeEmergente"></div>
+
+
+<script src="ante_version4_filtro.js"></script>
+</body>
+</html>
